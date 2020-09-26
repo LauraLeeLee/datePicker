@@ -35,9 +35,10 @@ prev_mth_el.addEventListener('click', goToPrevMonth);
 
 // functions 
 function toggleDatePicker (e) {
-  // console.log(e.path);
+  console.log('event path', e.path);
   if (!checkEventPathForClass(e.path, 'dates')) {
-    dates_el.classList.toggle('active');  
+    dates_el.classList.toggle('active'); 
+    selected_date_el.classList.toggle('purple'); 
   }  
 }
 
@@ -138,3 +139,9 @@ function daysInMonth(month, year) {
   return d.getDate();
 }
 
+// FOR MOBILE
+if(document.documentElement.clientWidth <= 900) {
+  console.log("i'm on a mobile device");
+} else {
+  console.log("NOT on mobile");
+}
