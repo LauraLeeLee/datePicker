@@ -29,7 +29,7 @@ selected_date_el.dataset.value = selectedDate;
 
 // event listeners
 date_picker_el.addEventListener('click', toggleDatePicker);
-date_picker_el.addEventListener('touch', toggleDatePicker);
+date_picker_el.addEventListener('touch', toggleForMobile);
 next_mth_el.addEventListener('click', goToNextMonth);
 prev_mth_el.addEventListener('click', goToPrevMonth);
 
@@ -40,6 +40,14 @@ function toggleDatePicker (e) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
   }  
+}
+
+function toggleForMobile (e) {
+  console.log('mobile event', e.path);
+  if(!checkEventPathMobile(e.path, 'dates')) {
+    dates_el.classList.toggle('active'); 
+    selected_date_el.classList.toggle('purple'); 
+  }
 }
 
 function goToNextMonth (e) {
@@ -112,6 +120,15 @@ loadCalendarDays();
 function checkEventPathForClass (path, selector) {
   for (let i = 0; i < path.length; i++ ) {
     if (path[i].classList && path[i].classList.contains(selector)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function checkEventPathMobile (target, selector) {
+  for (let i = 0; i < path.length; i++ ) {
+    if (target[i].classList && target[i].classList.contains(selector)) {
       return true;
     }
   }
