@@ -43,11 +43,10 @@ function toggleDatePicker (e) {
 }
 
 function toggleForMobile (e) {
-  console.log('mobile event', e.path);
-  if(!checkEventPathMobile(e.path, 'dates')) {
+  console.log('mobile touch event');
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
-  }
+  
 }
 
 function goToNextMonth (e) {
