@@ -166,7 +166,7 @@ function daysInMonth(month, year) {
 // }
 
 function watchWindowSize() {
-  if(document.documentElement.clientWidth <= 900) {
+  if(document.documentElement.clientWidth <= 800) {
     console.log("i'm on a mobile device");
     document.getElementsByTagName('body')[0].style.backgroundColor = 'blue';
   } else {
