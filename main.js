@@ -29,7 +29,7 @@ selected_date_el.dataset.value = selectedDate;
 
 // event listeners
 date_picker_el.addEventListener('click', toggleDatePicker);
-date_picker_el.addEventListener('touch', toggleForMobile);
+date_picker_el.addEventListener('ontouchstart', toggleForMobile);
 next_mth_el.addEventListener('click', goToNextMonth);
 prev_mth_el.addEventListener('click', goToPrevMonth);
 
@@ -157,8 +157,22 @@ function daysInMonth(month, year) {
 }
 
 // FOR MOBILE
-if(document.documentElement.clientWidth <= 900) {
-  console.log("i'm on a mobile device");
-} else {
-  console.log("NOT on mobile");
+// if(document.documentElement.clientWidth <= 900) {
+//   console.log("i'm on a mobile device");
+//   document.getElementsByTagName('body')[0].style.backgroundColor = 'blue';
+// } else {
+//   console.log("NOT on mobile");
+//   document.getElementsByTagName('body')[0].style.backgroundColor = '#ffce00';
+// }
+
+function watchWindowSize() {
+  if(document.documentElement.clientWidth <= 900) {
+    console.log("i'm on a mobile device");
+    document.getElementsByTagName('body')[0].style.backgroundColor = 'blue';
+  } else {
+    console.log("NOT on mobile");
+    document.getElementsByTagName('body')[0].style.backgroundColor = '#ffce00';
+  }
 }
+
+window.addEventListener('resize', watchWindowSize);
