@@ -125,12 +125,11 @@ function checkEventPathForClass (path, selector) {
   return false;
 }
 
-function checkMobileEventPath (e, selector) {
-  for(let i=0; i< e.targetTouches.length; i++) {
-    console.log('touchpoint[' + i + '].target= ',  e.targetTouches[i].target);
-  }
-})
-}
+// function checkMobileEventPath (e, selector) {
+//   for(let i=0; i< e.targetTouches.length; i++) {
+//     console.log('touchpoint[' + i + '].target= ',  e.targetTouches[i].target);
+//   }
+// }
 
 function checkEventPathMobile (target, selector) {
   for (let i = 0; i < path.length; i++ ) {
