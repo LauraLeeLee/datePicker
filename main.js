@@ -47,7 +47,7 @@ function toggleForMobile (e) {
   console.log('target1 ',  e.touches);
   console.log('target2: ', e.touches[0].target.className);
 
-  if(!checkMobileEventPath(e.touches[0].target.className, 'dates')) {
+  if(!checkEventPathMobile(e.touches[0].target.className, 'dates')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
   }
@@ -139,14 +139,14 @@ function checkEventPathForClass (path, selector) {
   return false;
 }
 
-function checkMobileEventPath (targetTouches, selector) {
-  for(let i=0; i< targetTouches.length; i++) {
-    console.log('touchpoint[' + i + '].target= ',  targetTouches[i].target);
-    if(touchpoint[i].target.classList && touchpoint[i].target.classList.contains(selector)) {
-      return true;
-    }
-  }
-}
+// function checkMobileEventPath (targetTouches, selector) {
+//   for(let i=0; i< targetTouches.length; i++) {
+//     console.log('touchpoint[' + i + '].target= ',  targetTouches[i].target);
+//     if(touchpoint[i].target.classList && touchpoint[i].target.classList.contains(selector)) {
+//       return true;
+//     }
+//   }
+// }
 
 
 function formatDate (d) {
