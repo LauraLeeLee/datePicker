@@ -29,7 +29,7 @@ selected_date_el.dataset.value = selectedDate;
 
 // event listeners
 date_picker_el.addEventListener('click', toggleDatePicker);
-date_picker_el.addEventListener('ontouchstart', toggleForMobile);
+
 next_mth_el.addEventListener('click', goToNextMonth);
 prev_mth_el.addEventListener('click', goToPrevMonth);
 
@@ -169,6 +169,7 @@ function watchWindowSize() {
     console.log("i'm on a mobile device");
     date_picker_el.removeEventListener('click', toggleDatePicker);
     document.getElementsByTagName('body')[0].style.backgroundColor = 'blue';
+    date_picker_el.addEventListener('ontouchstart', toggleForMobile);
   } else {
     console.log("NOT on mobile");
     date_picker_el.addEventListener('click', toggleDatePicker);
