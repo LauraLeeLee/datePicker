@@ -167,9 +167,11 @@ function daysInMonth(month, year) {
 function watchWindowSize() {
   if(document.documentElement.clientWidth <= 700) {
     console.log("i'm on a mobile device");
+    date_picker_el.removeEventListener('click', toggleDatePicker);
     document.getElementsByTagName('body')[0].style.backgroundColor = 'blue';
   } else {
     console.log("NOT on mobile");
+    date_picker_el.addEventListener('click', toggleDatePicker);
     document.getElementsByTagName('body')[0].style.backgroundColor = '#ffce00';
   }
 }
