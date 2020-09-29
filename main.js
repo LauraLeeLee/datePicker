@@ -44,15 +44,23 @@ function toggleDatePicker (e) {
 
 function toggleForMobile (e) {
   console.log('mobile touch event');
-  console.log('target1 ',  e.touchpoint);
-  console.log('target2: ', e.target)
+  console.log('target1 ',  e.touches);
+  console.log('target2: ', e.touches.target);
 
   if(!checkMobileEventPath(e.touchpoint.target, 'dates')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
   }
-    
-  
+}
+
+
+function checkEventPathMobile (target, selector) {
+  for (let i = 0; i < path.length; i++ ) {
+    if (target[i].classList && target[i].classList.contains(selector)) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function goToNextMonth (e) {
@@ -140,14 +148,6 @@ function checkMobileEventPath (targetTouches, selector) {
   }
 }
 
-function checkEventPathMobile (target, selector) {
-  for (let i = 0; i < path.length; i++ ) {
-    if (target[i].classList && target[i].classList.contains(selector)) {
-      return true;
-    }
-  }
-  return false;
-}
 
 function formatDate (d) {
   let day = d.getDate();
