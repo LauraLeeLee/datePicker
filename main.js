@@ -178,6 +178,7 @@ function watchWindowSize() {
     date_picker_el.addEventListener('touchstart', toggleForMobile);
     date_picker_el.addEventListener('touchstart', function(e) {
       e.stopPropagation();
+      console.log('propagation stopped');
     });
     // date_picker_el.addEventListener('touchstart', function(e) {
     //   for(let i=0; i< e.targetTouches.length; i++) {
