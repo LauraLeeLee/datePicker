@@ -175,12 +175,15 @@ function watchWindowSize() {
     console.log("i'm on a mobile device");
     date_picker_el.removeEventListener('click', toggleDatePicker);
     document.getElementsByTagName('body')[0].style.backgroundColor = 'blue';
-    // date_picker_el.addEventListener('touchstart', toggleForMobile);
+    date_picker_el.addEventListener('touchstart', toggleForMobile);
     date_picker_el.addEventListener('touchstart', function(e) {
-      for(let i=0; i< e.targetTouches.length; i++) {
-        console.log('touchpoint[' + i + '].target= ',  e.targetTouches[i].target);
-      }
-    }); 
+      e.stopPropagation();
+    });
+    // date_picker_el.addEventListener('touchstart', function(e) {
+    //   for(let i=0; i< e.targetTouches.length; i++) {
+    //     console.log('touchpoint[' + i + '].target= ',  e.targetTouches[i].target);
+    //   }
+    // }); 
   } else {
     console.log("NOT on mobile");
     date_picker_el.addEventListener('click', toggleDatePicker);
