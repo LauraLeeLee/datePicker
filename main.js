@@ -44,8 +44,11 @@ function toggleDatePicker (e) {
 
 function toggleForMobile (e) {
   console.log('mobile touch event');
+  if(!checkMobileEventPath(e.touchpoint.target, 'dates')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
+  }
+    
   
 }
 
@@ -125,11 +128,14 @@ function checkEventPathForClass (path, selector) {
   return false;
 }
 
-// function checkMobileEventPath (e, selector) {
-//   for(let i=0; i< e.targetTouches.length; i++) {
-//     console.log('touchpoint[' + i + '].target= ',  e.targetTouches[i].target);
-//   }
-// }
+function checkMobileEventPath (targetTouches, selector) {
+  for(let i=0; i< targetTouches.length; i++) {
+    console.log('touchpoint[' + i + '].target= ',  targetTouches[i].target);
+    if(touchpoint[i].target.classList && touchpoint[i].target.classList.contains(selector)) {
+      return true;
+    }
+  }
+}
 
 function checkEventPathMobile (target, selector) {
   for (let i = 0; i < path.length; i++ ) {
