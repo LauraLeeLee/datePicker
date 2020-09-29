@@ -180,7 +180,7 @@ function watchWindowSize() {
       for(let i=0; i< e.targetTouches.length; i++) {
         console.log('touchpoint[' + i + '].target= ',  e.targetTouches[i].target);
       }
-      
+    }); 
   } else {
     console.log("NOT on mobile");
     date_picker_el.addEventListener('click', toggleDatePicker);
