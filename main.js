@@ -172,7 +172,7 @@ function watchWindowSize() {
     // date_picker_el.addEventListener('touchstart', toggleForMobile);
     date_picker_el.addEventListener('touchstart', function(e) {
       for(let i=0; i< e.targetTouches.length; i++) {
-        console.log('touchpoint[' + i + '].target= '  e.targetTouches[i].target);
+        console.log('touchpoint[' + i + '].target= ',  e.targetTouches[i].target);
       }
     })
   } else {
