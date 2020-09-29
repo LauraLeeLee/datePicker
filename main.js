@@ -45,7 +45,7 @@ function toggleDatePicker (e) {
 function toggleForMobile (e) {
   console.log('mobile touch event');
   console.log('target1 ',  e.touches);
-  console.log('target2: ', e.touches[0].target);
+  console.log('target2: ', e.touches[0].target.className);
 
   if(!checkMobileEventPath(e.touches.target[0], 'dates')) {
     dates_el.classList.toggle('active'); 
