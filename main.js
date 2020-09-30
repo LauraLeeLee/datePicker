@@ -61,35 +61,25 @@ function toggleDatePicker (e) {
 function toggleForMobile (e) {
   console.log('current target', e.currentTarget);
   
-  console.log('event target', e.path);
+  console.log('event target', e.target);
   // console.log('target1 ',  e.touches);
   // console.log('target2: ', e.touches[0].target.className);
   // console.log('target3: ', e.touches[0].target.textContent);
 
-  if(!checkEventPathMobile(e.path, 'dates')) {
+  if(!checkEventPathMobile(e.target.className, 'dates')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
   }
 }
 
-
-function checkEventPathMobile (path, selector) {
-  for (let i = 0; i < path.length; i++ ) {
-    if (path[i].classList && path[i].classList.contains(selector)) {
+function checkEventPathMobile (target, selector) {
+  for (let i = 0; i < target.length; i++ ) {
+    if (target[i].classList && target[i].classList.contains(selector)) {
       return true;
     }
-  }å
+  }
   return false;
 }
-
-// function checkEventPathMobile (target, selector) {
-//   for (let i = 0; i < target.length; i++ ) {
-//     if (target[i].classList && target[i].classList.contains(selector)) {
-//       return true;
-//     }
-//   }
-//   return false;
-// }
 
 function goToNextMonth (e) {
   month++;
