@@ -35,6 +35,8 @@ prev_mth_el.addEventListener('click', goToPrevMonth);
 
 // functions 
 function toggleDatePicker (e) {
+  e.stopPropagation();
+      console.log('propagation stopped');
   console.log('event path', e.path);
   if (!checkEventPathForClass(e.path, 'dates')) {
     dates_el.classList.toggle('active'); 
@@ -189,14 +191,13 @@ function watchWindowSize() {
     // date_picker_el.addEventListener('mousedown', toggleDatePicker);
     date_picker_el.addEventListener('touchstart', toggleForMobile);
     date_picker_el.addEventListener('touchstart', function(e) {
-      e.stopPropagation();
-      console.log('propagation stopped');
+      
     });
-    date_picker_el.addEventListener('touchstart', function(e) {
-      for(let i=0; i< e.targetTouches.length; i++) {
-        console.log('touchpoint[' + i + '].target= ',  e.targetTouches[i].target);
-      }
-    }); 
+    // date_picker_el.addEventListener('touchstart', function(e) {
+    //   for(let i=0; i< e.targetTouches.length; i++) {
+    //     console.log('touchpoint[' + i + '].target= ',  e.targetTouches[i].target);
+    //   }
+    // }); 
   } else {
     console.log("NOT on mobile");
     date_picker_el.addEventListener('click', toggleDatePicker);
