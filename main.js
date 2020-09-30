@@ -42,21 +42,35 @@ function toggleDatePicker (e) {
   }  
 }
 
-function toggleForMobile (e) {
-  // e.stopPropagation();
-  // console.log('propagation stopped');
+// function toggleForMobile (e) {
+//   // e.stopPropagation();
+//   // console.log('propagation stopped');
   
-  console.log('mobile touch event');
-  console.log('target1 ',  e.touches);
-  console.log('target2: ', e.touches[0].target.className);
-  console.log('target3: ', e.touches[0].target.textContent);
+//   console.log('mobile touch event');
+//   console.log('target1 ',  e.touches);
+//   console.log('target2: ', e.touches[0].target.className);
+//   console.log('target3: ', e.touches[0].target.textContent);
+
+//   if(!checkEventPathMobile(e.touches[0].target.className, 'dates')) {
+//     dates_el.classList.toggle('active'); 
+//     selected_date_el.classList.toggle('purple'); 
+//   }
+// }
+
+
+function toggleForMobile (e) {
+  console.log('current target', e.currentTarget);
+  
+  console.log('event target', e.target);
+  // console.log('target1 ',  e.touches);
+  // console.log('target2: ', e.touches[0].target.className);
+  // console.log('target3: ', e.touches[0].target.textContent);
 
   if(!checkEventPathMobile(e.touches[0].target.className, 'dates')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
   }
 }
-
 
 function checkEventPathMobile (target, selector) {
   for (let i = 0; i < target.length; i++ ) {
