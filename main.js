@@ -190,11 +190,11 @@ function watchWindowSize() {
     date_picker_el.removeEventListener('click', toggleDatePicker);
     document.getElementsByTagName('body')[0].style.backgroundColor = 'blue';
 
-    date_picker_el.addEventListener('touchstart', toggleForMobile, false);
-    date_picker_el.addEventListener('touchstart', function(e) {
-      // e.stopPropagation();
-      // console.log('propagation stopped');
-    });
+    date_picker_el.addEventListener('mouseup', toggleForMobile, false);
+    // date_picker_el.addEventListener('touchstart', function(e) {
+    //   // e.stopPropagation();
+    //   // console.log('propagation stopped');
+    // });
     // date_picker_el.addEventListener('touchstart', function(e) {
     //   for(let i=0; i< e.targetTouches.length; i++) {
     //     console.log('touchpoint[' + i + '].target= ',  e.targetTouches[i].target);
