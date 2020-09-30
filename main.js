@@ -43,12 +43,13 @@ function toggleDatePicker (e) {
 }
 
 function toggleForMobile (e) {
-  e.stopPropagation();
-  console.log('propagation stopped');
+  // e.stopPropagation();
+  // console.log('propagation stopped');
   
   console.log('mobile touch event');
   console.log('target1 ',  e.touches);
   console.log('target2: ', e.touches[0].target.className);
+  console.log('target3: ', e.touches[0].target.textContent);
 
   if(!checkEventPathMobile(e.touches[0].target.className, 'dates')) {
     dates_el.classList.toggle('active'); 
@@ -189,7 +190,7 @@ function watchWindowSize() {
     date_picker_el.removeEventListener('click', toggleDatePicker);
     document.getElementsByTagName('body')[0].style.backgroundColor = 'blue';
 
-    date_picker_el.addEventListener('touchstart', toggleForMobile);
+    date_picker_el.addEventListener('touchstart', toggleForMobile, false);
     date_picker_el.addEventListener('touchstart', function(e) {
       // e.stopPropagation();
       // console.log('propagation stopped');
