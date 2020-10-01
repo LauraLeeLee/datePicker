@@ -63,6 +63,7 @@ function toggleForMobile (e) {
   
   console.log('event target', e.target);
   console.log('event target', e.target.getAttribute('class'));
+  console.log('e.target.className', e.target.className);
 
   // console.log('target1 ',  e.touches);
   // console.log('target2: ', e.touches[0].target.className);
