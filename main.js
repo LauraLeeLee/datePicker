@@ -62,6 +62,8 @@ function toggleForMobile (e) {
   console.log('current target', e.currentTarget);
   
   console.log('event target', e.target);
+  console.log('event target', e.target.getAttribute('class'));
+
   // console.log('target1 ',  e.touches);
   // console.log('target2: ', e.touches[0].target.className);
   // console.log('target3: ', e.touches[0].target.textContent);
@@ -75,6 +77,7 @@ function toggleForMobile (e) {
 function checkEventPathMobile (target, selector) {
   for (let i = 0; i < target.length; i++ ) {
     if (target[i].classList && target[i].classList.contains(selector)) {
+      console.log('classList', target[i].classList);
       return true;
     }
   }
@@ -156,16 +159,6 @@ function checkEventPathForClass (path, selector) {
   }
   return false;
 }
-
-// function checkMobileEventPath (targetTouches, selector) {
-//   for(let i=0; i< targetTouches.length; i++) {
-//     console.log('touchpoint[' + i + '].target= ',  targetTouches[i].target);
-//     if(touchpoint[i].target.classList && touchpoint[i].target.classList.contains(selector)) {
-//       return true;
-//     }
-//   }
-// }
-
 
 function formatDate (d) {
   let day = d.getDate();
