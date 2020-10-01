@@ -77,8 +77,8 @@ function toggleForMobile (e) {
 
 function checkEventPathMobile (target, selector) {
   for (let i = 0; i < target.length; i++ ) {
+    console.log('classList', target[i].classList);
     if (target[i].classList && target[i].classList.contains(selector)) {
-      console.log('classList', target[i].classList);
       return true;
     }
   }
@@ -155,6 +155,7 @@ loadCalendarDays();
 function checkEventPathForClass (path, selector) {
   for (let i = 0; i < path.length; i++ ) {
     if (path[i].classList && path[i].classList.contains(selector)) {
+      console.log('class', path[i].classList);
       return true;
     }
   }
