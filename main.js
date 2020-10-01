@@ -69,7 +69,7 @@ function toggleForMobile (e) {
   // console.log('target2: ', e.touches[0].target.className);
   // console.log('target3: ', e.touches[0].target.textContent);
 
-  if(!checkEventPathMobile(e.target.getAttribute('class'), 'selected-date')) {
+  if(checkEventPathMobile(e.target.getAttribute('class'), 'selected-date')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
   }
@@ -78,7 +78,6 @@ function toggleForMobile (e) {
 function checkEventPathMobile (target, selector) {
   for (let i = 0; i < target.length; i++ ) {
     console.log('target', target);
-    console.log('classList', target.classList);
     if (target && (target == selector)) {
       return true;
     }
