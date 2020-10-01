@@ -79,7 +79,7 @@ function checkEventPathMobile (target, selector) {
   for (let i = 0; i < target.length; i++ ) {
     console.log('target', target);
     console.log('classList', target.classList);
-    if (target && target.contains(selector)) {
+    if (target && (target == selector))) {
       return true;
     }
   }
