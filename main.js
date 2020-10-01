@@ -62,14 +62,14 @@ function toggleForMobile (e) {
   console.log('current target', e.currentTarget);
   
   console.log('event target', e.target);
-  console.log('event target', e.target.getAttribute('class'));
+  console.log('event target class: ', e.target.getAttribute('class'));
   console.log('e.target.className', e.target.className);
 
   // console.log('target1 ',  e.touches);
   // console.log('target2: ', e.touches[0].target.className);
   // console.log('target3: ', e.touches[0].target.textContent);
 
-  if(!checkEventPathMobile(e.target.className, 'dates')) {
+  if(checkEventPathMobile(e.target.className, 'selected-date')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
   }
