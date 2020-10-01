@@ -77,6 +77,7 @@ function toggleForMobile (e) {
 
 function checkEventPathMobile (target, selector) {
   for (let i = 0; i < target.length; i++ ) {
+    console.log('target', target[i]);
     console.log('classList', target[i].classList);
     if (target[i].classList && target[i].classList.contains(selector)) {
       return true;
