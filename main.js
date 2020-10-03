@@ -48,7 +48,7 @@ function toggleForMobile (e) {
   // change the class to check what it isn't from dates - the calendar block
   //   to specific day that is tapped. in mobile, 'dates' doesn't show up
   //    in classList for the day.
-  if(!checkEventPathMobile(e.target, 'dates', 'day')) {
+  if(!checkEventPathMobile(e.target, 'dates', 'day', 'arrows')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
   }
@@ -63,7 +63,7 @@ function checkEventPathMobile (target, selector, selector2) {
 
   // in mobile the target and class list data renders different than on desktop
   //  rewrote the conditional to account for this
-  if(target && target.classList.contains(selector) || target.classList.contains(selector2)) {
+  if(target && target.classList.contains(selector) || target.classList.contains(selector2) || target.classList.contains(selector3)) {
     return true;
   }
   return false;
