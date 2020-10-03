@@ -61,13 +61,13 @@ function toggleDatePicker (e) {
 
 
 function toggleForMobile (e) {
-  console.log('current target', e.currentTarget);
-  console.log('event target', e.target);
+  // console.log('current target', e.currentTarget);
+  // console.log('event target', e.target);
 
-  console.log('event target class: ', e.target.getAttribute('class'));
-  console.log('e.target.className', e.target.className);
+  // console.log('event target class: ', e.target.getAttribute('class'));
+  // console.log('e.target.className', e.target.className);
 
-  console.log(checkEventPathMobile(e.target, 'dates'));
+  // console.log(checkEventPathMobile(e.target, 'dates'));
   if(!checkEventPathMobile(e.target, 'dates')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
@@ -86,6 +86,7 @@ function checkEventPathMobile (target, selector) {
   // return false;
   console.log('target in fn', target);
   console.log('targetClass in fn', target.classList );
+  console.log('selector in fn', selector);
   console.log('selector in fn', target.classList.contains(selector));
   if(target && target.classList.contains(selector)) {
     return true;
@@ -161,9 +162,11 @@ loadCalendarDays();
 
 //Helper Functions
 function checkEventPathForClass (path, selector) {
+  console.log('target in fn', path);
   for (let i = 0; i < path.length; i++ ) {
     if (path[i].classList && path[i].classList.contains(selector)) {
-      console.log('class', path[i].classList);
+      console.log('targetClass in fn', path[i].classList );
+      console.log('selector in fn', path[i].classList.contains(selector));
       return true;
     }
   }
