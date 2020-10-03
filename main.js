@@ -68,7 +68,7 @@ function toggleForMobile (e) {
   // console.log('e.target.className', e.target.className);
 
   // console.log(checkEventPathMobile(e.target, 'dates'));
-  if(!checkEventPathMobile(e.target, 'dates')) {
+  if(!checkEventPathMobile(e.target, 'day')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
   }
@@ -166,6 +166,7 @@ function checkEventPathForClass (path, selector) {
   for (let i = 0; i < path.length; i++ ) {
     if (path[i].classList && path[i].classList.contains(selector)) {
       console.log('targetClass in fn', path[i].classList );
+      console.log('selector in fn', selector);
       console.log('selector in fn', path[i].classList.contains(selector));
       return true;
     }
