@@ -86,6 +86,7 @@ function checkEventPathMobile (target, selector) {
   // return false;
   console.log('target in fn', target);
   console.log('targetClass in fn', target.classList );
+  console.log('selector in fn', target.classList.contains(selector));
   if(target && target.classList.contains(selector)) {
     return true;
   }
