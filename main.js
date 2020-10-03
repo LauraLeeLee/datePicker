@@ -68,7 +68,7 @@ function toggleForMobile (e) {
   // console.log('target1 ',  e.touches);
   // console.log('target2: ', e.touches[0].target.className);
   // console.log('target3: ', e.touches[0].target.textContent);
-
+  checkEventPathMobile(e.target, 'dates');
   if(!checkEventPathMobile(e.target, 'dates')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
