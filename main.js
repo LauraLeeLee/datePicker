@@ -62,14 +62,11 @@ function toggleDatePicker (e) {
 
 function toggleForMobile (e) {
   console.log('current target', e.currentTarget);
-  
   console.log('event target', e.target);
+
   console.log('event target class: ', e.target.getAttribute('class'));
   console.log('e.target.className', e.target.className);
 
-  // console.log('target1 ',  e.touches);
-  // console.log('target2: ', e.touches[0].target.className);
-  // console.log('target3: ', e.touches[0].target.textContent);
   console.log(checkEventPathMobile(e.target, 'dates'));
   if(!checkEventPathMobile(e.target, 'dates')) {
     dates_el.classList.toggle('active'); 
@@ -78,12 +75,17 @@ function toggleForMobile (e) {
 }
 
 function checkEventPathMobile (target, selector) {
-  for (let i = 0; i < target.length; i++ ) {
-    console.log('target', target);
-    console.log('target classList', target.classList);
-    if (target && target.classList.contains(selector)) {
-      return true;
-    }
+  console.log('check mobile path fired');
+  // for (let i = 0; i < target.length; i++ ) {
+  //   console.log('target', target);
+  //   console.log('target classList', target.classList);
+  //   if (target && target.classList.contains(selector)) {
+  //     return true;
+  //   }
+  // }
+  // return false;
+  if(target && target.classList.contains(selector)) {
+    return true;
   }
   return false;
 }
