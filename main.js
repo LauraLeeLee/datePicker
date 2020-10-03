@@ -54,12 +54,12 @@ function toggleForMobile (e) {
   }
 }
 
-function checkEventPathMobile (target, selector, selector2) {
+function checkEventPathMobile (target, selector, selector2, selector3) {
   // console.log('check mobile path fired');
-  // console.log('target in fn', target);
-  // console.log('targetClass in fn', target.classList );
-  // console.log('selector in fn', selector);
-  // console.log('selector in fn', target.classList.contains(selector));
+  console.log('target in fn', target);
+  console.log('targetClass in fn', target.classList );
+  console.log('selector in fn', selector);
+  console.log('selector in fn', target.classList.contains(selector));
 
   // in mobile the target and class list data renders different than on desktop
   //  rewrote the conditional to account for this
