@@ -34,7 +34,9 @@ next_mth_el.addEventListener('click', goToNextMonth);
 prev_mth_el.addEventListener('click', goToPrevMonth);
 
 // functions 
+
 function toggleDatePicker (e) {
+  console.log(checkEventPathForClass(e.path, 'dates'));
   console.log('event path', e.path);
   if (!checkEventPathForClass(e.path, 'dates')) {
     dates_el.classList.toggle('active'); 
@@ -68,7 +70,7 @@ function toggleForMobile (e) {
   // console.log('target1 ',  e.touches);
   // console.log('target2: ', e.touches[0].target.className);
   // console.log('target3: ', e.touches[0].target.textContent);
-  checkEventPathMobile(e.target, 'dates');
+  console.log(checkEventPathMobile(e.target, 'dates'));
   if(!checkEventPathMobile(e.target, 'dates')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
