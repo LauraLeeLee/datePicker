@@ -63,7 +63,7 @@ function checkEventPathMobile (target, selector, selector2) {
 
   // in mobile the target and class list data renders different than on desktop
   //  rewrote the conditional to account for this
-  if(target && target.classList.contains(selector) && target.classList.contains(selector2)) {
+  if(target && target.classList.contains(selector) || target.classList.contains(selector2)) {
     return true;
   }
   return false;
