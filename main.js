@@ -36,8 +36,8 @@ prev_mth_el.addEventListener('click', goToPrevMonth);
 // functions 
 
 function toggleDatePicker (e) {
-  console.log(checkEventPathForClass(e.path, 'dates'));
-  console.log('event path', e.path);
+  // console.log(checkEventPathForClass(e.path, 'dates'));
+  // console.log('event path', e.path);
   if (!checkEventPathForClass(e.path, 'dates')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
@@ -61,34 +61,25 @@ function toggleDatePicker (e) {
 
 
 function toggleForMobile (e) {
-  // console.log('current target', e.currentTarget);
-  // console.log('event target', e.target);
-
-  // console.log('event target class: ', e.target.getAttribute('class'));
-  // console.log('e.target.className', e.target.className);
-
-  // console.log(checkEventPathMobile(e.target, 'dates'));
-  if(!checkEventPathMobile(e.target, 'day')) {
+  // change the class to check what it isn't from dates - the calendar block
+  //   to specific day that is tapped. in mobile, 'dates' doesn't show up
+  //    in classList for the day.
+  if(!checkEventPathMobile(e.target, 'dates', 'day')) {
     dates_el.classList.toggle('active'); 
     selected_date_el.classList.toggle('purple'); 
   }
 }
 
-function checkEventPathMobile (target, selector) {
-  console.log('check mobile path fired');
-  // for (let i = 0; i < target.length; i++ ) {
-  //   console.log('target', target);
-  //   console.log('target classList', target.classList);
-  //   if (target && target.classList.contains(selector)) {
-  //     return true;
-  //   }
-  // }
-  // return false;
-  console.log('target in fn', target);
-  console.log('targetClass in fn', target.classList );
-  console.log('selector in fn', selector);
-  console.log('selector in fn', target.classList.contains(selector));
-  if(target && target.classList.contains(selector)) {
+function checkEventPathMobile (target, selector, selector2) {
+  // console.log('check mobile path fired');
+  // console.log('target in fn', target);
+  // console.log('targetClass in fn', target.classList );
+  // console.log('selector in fn', selector);
+  // console.log('selector in fn', target.classList.contains(selector));
+
+  // in mobile the target and class list data renders different than on desktop
+  //  rewrote the conditional to account for this
+  if(target && target.classList.contains(selector) && target.classList.contains(selector2)) {
     return true;
   }
   return false;
@@ -162,12 +153,12 @@ loadCalendarDays();
 
 //Helper Functions
 function checkEventPathForClass (path, selector) {
-  console.log('target in fn', path);
+  // console.log('target in fn', path);
   for (let i = 0; i < path.length; i++ ) {
     if (path[i].classList && path[i].classList.contains(selector)) {
-      console.log('targetClass in fn', path[i].classList );
-      console.log('selector in fn', selector);
-      console.log('selector in fn', path[i].classList.contains(selector));
+      // console.log('targetClass in fn', path[i].classList );
+      // console.log('selector in fn', selector);
+      // console.log('selector in fn', path[i].classList.contains(selector));
       return true;
     }
   }
