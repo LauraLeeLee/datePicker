@@ -127,9 +127,10 @@ function loadCalendarDays() {
       loadCalendarDays();
     });
     days_el.appendChild(day_el);
-    console.log('selectedDay', selectedDay);
-    console.log('selectedDate', selectedDate);
+ 
   }
+  console.log('selectedDay', selectedDay);
+  console.log('selectedDate', selectedDate);
 
   let clear = document.createElement('div');
   clear.className = 'clear';
