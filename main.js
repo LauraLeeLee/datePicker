@@ -44,22 +44,6 @@ function toggleDatePicker (e) {
   }  
 }
 
-// function toggleForMobile (e) {
-//   // e.stopPropagation();
-//   // console.log('propagation stopped');
-  
-//   console.log('mobile touch event');
-//   console.log('target1 ',  e.touches);
-//   console.log('target2: ', e.touches[0].target.className);
-//   console.log('target3: ', e.touches[0].target.textContent);
-
-//   if(!checkEventPathMobile(e.touches[0].target.className, 'dates')) {
-//     dates_el.classList.toggle('active'); 
-//     selected_date_el.classList.toggle('purple'); 
-//   }
-// }
-
-
 function toggleForMobile (e) {
   // change the class to check what it isn't from dates - the calendar block
   //   to specific day that is tapped. in mobile, 'dates' doesn't show up
@@ -143,6 +127,7 @@ function loadCalendarDays() {
       loadCalendarDays();
     });
     days_el.appendChild(day_el);
+    console.log('selectedDay', selectedDay);
   }
 
   let clear = document.createElement('div');
