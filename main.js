@@ -117,7 +117,7 @@ function loadCalendarDays() {
     }
 
     day_el.addEventListener('click', function() {
-      selectedDate = new Date(year + '-' + (month + 1) + '-' + (i + 1));
+      selectedDate = new Date(year,(month + 1),(i + 1));
       selectedDay = (i + 1);
       selectedMonth = month;
       selectedYear = year;
@@ -132,9 +132,9 @@ function loadCalendarDays() {
   console.log('selectedDay', selectedDay);
   console.log('selectedDate', selectedDate);
 
-  let clear = document.createElement('div');
-  clear.className = 'clear';
-  days_el.appendChild(clear);
+  // let clear = document.createElement('div');
+  // clear.className = 'clear';
+  // days_el.appendChild(clear);
 }
 loadCalendarDays();
 
@@ -190,15 +190,7 @@ function watchWindowSize() {
     document.getElementsByTagName('body')[0].style.backgroundColor = 'blue';
 
     date_picker_el.addEventListener('mouseup', toggleForMobile, false);
-    // date_picker_el.addEventListener('touchstart', function(e) {
-    //   // e.stopPropagation();
-    //   // console.log('propagation stopped');
-    // });
-    // date_picker_el.addEventListener('touchstart', function(e) {
-    //   for(let i=0; i< e.targetTouches.length; i++) {
-    //     console.log('touchpoint[' + i + '].target= ',  e.targetTouches[i].target);
-    //   }
-    // }); 
+  
   } else {
     console.log("NOT on mobile");
     date_picker_el.addEventListener('click', toggleDatePicker);
