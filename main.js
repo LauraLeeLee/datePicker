@@ -117,10 +117,14 @@ function loadCalendarDays() {
     }
 
     day_el.addEventListener('click', function() {
-      selectedDate = new Date(year,(month + 1),(i + 1));
+      // selectedDate = new Date(year + '-' + (month + 1) + '-' + (i + 1));
+      // selectedDate = new Date(year, (month + 1),(i + 1));
+      selectedDate = new Date(year, month,(i + 1));
       selectedDay = (i + 1);
       selectedMonth = month;
       selectedYear = year;
+      console.log('SELECTED DATE: ', new Date(year, month,(i + 1)));
+      console.log(month + 1);
       selected_date_el.textContent = formatDate(selectedDate); //selected_date_el is the el showing the formatted date that was selected
       selected_date_el.dataset.value = selectedDate;
 
